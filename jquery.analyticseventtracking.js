@@ -45,7 +45,7 @@
         }
     };
 
-    $.fn.googleEventTracking = function(options){
+    $.fn.analyticsEventTracking = function(options){
         var settings = {
             category  : methods.reportCategory,
             action    : methods.reportAction,

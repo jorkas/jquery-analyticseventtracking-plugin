@@ -7,18 +7,17 @@
        Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-  <title>demo</title>
+  <title>jQuery Google Analytics Event Tracking Plugin</title>
   <meta name="description" content="" />
   <meta name="generator" content="Studio 3 http://aptana.com/" />
   <meta name="author" content="Joakim Westerlund" />
-
   <meta name="viewport" content="width=device-width; initial-scale=1.0" />
 
   <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-  <script src="javascript/eventTracking.js"></script>
+  <script src="jquery.analyticseventtracking.js"></script>
   <style>
     #clickdiv{
       background:#f1f1f1;
@@ -26,10 +25,10 @@
   </style>
   <script>
     $(document).ready(function(){
-        $("a").googleEventTracking({
+        $("a").analyticsEventTracking({
             category : "blaha"
         });
-        $("#clickdiv").googleEventTracking({
+        $("#clickdiv").analyticsEventTracking({
             category : externalFunction
         });
         
