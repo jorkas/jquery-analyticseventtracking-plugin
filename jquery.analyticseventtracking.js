@@ -19,7 +19,6 @@
             if($.isFunction(value)){
                 return value.call(elm);
             }else{
-                //console.log("string or something:", value);
                 return value;
             }
         },
@@ -46,7 +45,7 @@
             };
             console.log("test encode",encodeString(tracking.eventCategory));
             console.log(elm);
-            _gaq.push(['_trackEvent', tracking.eventCategory, tracking.eventAction, tracking.eventLabel, tracking.eventValue]);
+            _gaq.push([settings.trackingName], tracking.eventCategory, tracking.eventAction, tracking.eventLabel, tracking.eventValue]);
             if(settings.delayed === true){
                 setTimeout(function(elm){
                     console.log("delayed tracking");
@@ -59,11 +58,12 @@
 
     $.fn.analyticsEventTracking = function(options){
         var settings = {
-            delayed: true,
-            category  : methods.reportCategory,
-            action    : methods.reportAction,
-            label     : methods.reportLabel,
-            value     : methods.reportValue
+            category: methods.reportCategory,
+            action: methods.reportAction,
+            label: methods.reportLabel,
+            value: methods.reportValue,
+            trackerName: "_trackEvent", //default to analytics default
+            delayed: true //Delay link clicks for some miliseconds
         };
         if (options){
             settings = $.extend(settings, options);
