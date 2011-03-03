@@ -14,43 +14,57 @@
   <meta name="viewport" content="width=device-width; initial-scale=1.0" />
 
   <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-  <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
   <script src="jquery.analyticseventtracking.js"></script>
+  <script type="text/javascript">//<![CDATA[
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount','UA-60851-5']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	//]]>
+    </script>
   <style>
-    #clickdiv{
-      background:#f1f1f1;
+    #tracked{
+        padding:10px;
+        background:#f1f1f1;
     }
   </style>
   <script>
     $(document).ready(function(){
-        $("a").analyticsEventTracking({
-            category : "blaha"
-        });
-        $("#clickdiv").analyticsEventTracking({
+        $("a").analyticsEventTracking();
+        $("#tracked").analyticsEventTracking({
             category : externalFunction
         });
         
-     }); 
+     });
+     function externalFunction(elm){
+        console.log(this);
+        return "testCategory";
+    }
   </script>
 </head>
 <body>
   <div>
     <header>
-      <h1>demo</h1>
+      <h1>Demo of Google Event Tracking jQuery Plugin</h1>
     </header>
     <nav>
-      <p><a href="/" data-report-category="testing category" data-report-action="MySpecialAction">Home</a></p>
-      <p><a href="/contact">Contact</a></p>
+      <p><a href="http://joakim-westerlund.se/" data-report-category="testing category" data-report-action="MySpecialAction">Home</a></p>
+      <p><a href="http://joakim-westerlund.se/blog">Blog</a></p>
     </nav>
 
-    <div id="clickdiv">
+    <div id="tracked">
       This is a special clickdiv with specified values...
     </div>
 
     <footer>
-     <p>&copy; Copyright 2011 by Joakim Westerlund</p>
+     <p>2011 by <a href="http://joakim-westerlund.se">Joakim Westerlund</a></p>
     </footer>
   </div>
 </body>
