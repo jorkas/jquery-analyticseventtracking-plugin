@@ -44,6 +44,7 @@ Links
 -----
 
 * Author:  [Joakim Westerlund](http://github.com/jorkas)
+* Author Homepage:  [Joakim Westerlund](http://joakim-westerlund.se)
 * Company: [Mynewsdesk](http://www.mynewsdesk.com)
 
 Please use the [GitHub issue tracker]{https://github.com/jorkas/jquery-analyticseventtracking-plugin/issues} for bug
