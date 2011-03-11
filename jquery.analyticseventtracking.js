@@ -5,12 +5,13 @@
     var encodeString = function(str){
         return encodeURI(str);
     };
-    
     var methods = {
         init: function(settings){
             this.each(function(){
                 $(this).click(function(event){
-                    event.preventDefault();
+                    if(settings.delayed){
+                        event.preventDefault();
+                    }
                     return methods.trackEvent.call($(this),settings,event);
                 });
             });
@@ -44,14 +45,11 @@
                 eventValue: methods.getEventValue(settings.value, this)
             };
             console.log("test encode",encodeString(tracking.eventCategory));
-            console.log(elm);
-            _gaq.push([settings.trackingName], tracking.eventCategory, tracking.eventAction, tracking.eventLabel, tracking.eventValue]);
+            _gaq.push([settings.trackingName], tracking.eventCategory, tracking.eventAction, tracking.eventLabel, tracking.eventValue);
             if(settings.delayed === true){
-                setTimeout(function(elm){
-                    console.log("delayed tracking");
-                    console.log(elm);
-                    //document.location = $(this).attr("href");
-                }, 50);
+                setTimeout(function(){
+                    document.location = $(elm).attr("href");
+                },50);
             }
         }
     };

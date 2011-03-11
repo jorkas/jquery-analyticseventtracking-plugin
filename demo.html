@@ -42,13 +42,14 @@
     $(document).ready(function(){
         $("a").analyticsEventTracking();
         $("#tracked").analyticsEventTracking({
-            category : externalFunction
+            category : externalFunction,
+            label: "my-defined-label"
         });
         
      });
      function externalFunction(elm){
         console.log(this);
-        return "testCategory";
+        return "testing external funciton category with space";
     }
   </script>
 </head>
@@ -58,8 +59,8 @@
       <h1>Demo of Google Event Tracking jQuery Plugin</h1>
     </header>
     <nav>
-      <p><a href="http://joakim-westerlund.se/" data-report-category="testing category" data-report-action="MySpecialAction">Home</a></p>
-      <p><a href="http://joakim-westerlund.se/blog">Blog</a></p>
+      <p><a href="http://joakim-westerlund.se/" data-report-category="testing åöä category" data-report-action="MySpecialAction">Home</a></p>
+      <p><a href="http://joakim-westerlund.se/blog" data-report-category="category-blog" data-report-label="label-blog">Blog</a></p>
     </nav>
 
     <div id="tracked">
