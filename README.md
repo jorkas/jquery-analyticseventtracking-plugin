@@ -1,4 +1,4 @@
-Google Analytics Event Tracking
+Google Analytics Event Tracking jQuery Plugin
 =========================
 
 A jQuery plugin that helps you set up easy Event Tracking With Google Analytics (http://code.google.com/apis/analytics/docs/tracking/eventTrackerGuide.html).
@@ -28,8 +28,8 @@ You may pass an options object to customize the event values:
  - **action**
    Default is HTML5 data attribute at the element with `data-report-action`.
 
- - **action**
-   Default is HTML5 data attribute at the element with `data-report-action`.
+ - **label**
+   Default is HTML5 data attribute at the element with `data-report-label`.
 
  - **value**
    Default is HTML5 data attribute at the element with `data-report-value`.
@@ -39,6 +39,19 @@ You may pass an options object to customize the event values:
 
  - **delayed**
    Default is `true`.
+
+Examples
+-----
+<a href="/signup" data-report-category="signup" data-report-action="signup-click">Sign up</a>
+$("a").analyticsEventTracking();
+
+Can also be coded like this:
+
+<a href="/signup">Sign up</a>
+$("a").analyticsEventTracking({
+   category: "signup",
+   action: "signup-click"
+});
 
 Links
 -----
