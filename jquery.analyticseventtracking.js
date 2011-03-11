@@ -44,7 +44,6 @@
                 eventLabel: methods.getEventValue(settings.label, this),
                 eventValue: methods.getEventValue(settings.value, this)
             };
-            console.log("test encode",encodeString(tracking.eventCategory));
             _gaq.push([settings.trackingName], tracking.eventCategory, tracking.eventAction, tracking.eventLabel, tracking.eventValue);
             if(settings.delayed === true){
                 setTimeout(function(){
