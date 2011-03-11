@@ -42,22 +42,22 @@ You may pass an options object to customize the event values:
 
 Examples
 -----
-<a href="/signup" data-report-category="signup" data-report-action="signup-click">Sign up</a>
-$("a").analyticsEventTracking();
+`<a href="/signup" data-report-category="signup" data-report-action="signup-click">Sign up</a>
+$("a").analyticsEventTracking();`
 
 Can also be coded like this:
 
-<a href="/signup">Sign up</a>
+`<a href="/signup">Sign up</a>
 $("a").analyticsEventTracking({
    category: "signup",
    action: "signup-click"
-});
+});`
 
 Links
 -----
 
-* Author:  [Joakim Westerlund](http://github.com/jorkas) [Homepage](http://joakim-westerlund.se)
+* Author:  [Joakim Westerlund](http://github.com/jorkas) - [Homepage](http://joakim-westerlund.se)
 * Company: [Mynewsdesk](http://www.mynewsdesk.com)
 
-Please use the [GitHub issue tracker]{https://github.com/jorkas/jquery-analyticseventtracking-plugin/issues} for bug
+Please use the [GitHub issue tracker](https://github.com/jorkas/jquery-analyticseventtracking-plugin/issues) for bug
 reports and feature requests.
