@@ -65,6 +65,10 @@
         if (options){
             settings = $.extend(settings, options);
         }
-        methods.init.call( this, settings );
+        if(_gaq){
+            methods.init.call( this, settings );
+        }else{
+            alert("Google Analaytics _gaq varible not found...");
+        }
     };
 })( jQuery );

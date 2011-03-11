@@ -1,7 +1,7 @@
 Google Analytics Event Tracking jQuery Plugin
 =========================
 
-A jQuery plugin that helps you set up easy Event Tracking With Google Analytics (http://code.google.com/apis/analytics/docs/tracking/eventTrackerGuide.html).
+A jQuery plugin that helps you set up easy [Event Tracking With Google Analytics] (http://code.google.com/apis/analytics/docs/tracking/eventTrackerGuide.html).
 
 Features
 --------
@@ -23,16 +23,16 @@ Usage
 You may pass an options object to customize the event values:
 
  - **category**
-   Default is HTML5 data attribute at the element with `data-report-category`.
+   Default is HTML data attribute at the element with `data-report-category`.
 
  - **action**
-   Default is HTML5 data attribute at the element with `data-report-action`.
+   Default is HTML data attribute at the element with `data-report-action`.
 
  - **label**
-   Default is HTML5 data attribute at the element with `data-report-label`.
+   Default is HTML data attribute at the element with `data-report-label`.
 
  - **value**
-   Default is HTML5 data attribute at the element with `data-report-value`.
+   Default is HTML data attribute at the element with `data-report-value`.
 
  - **trackerName**
    Default is `_trackEvent`.
@@ -57,6 +57,12 @@ Links
 -----
 
 * Author:  [Joakim Westerlund](http://github.com/jorkas) [Homepage](http://joakim-westerlund.se)
+=======
+Links
+-----
+
+* Author:  [Joakim Westerlund](http://github.com/jorkas)
+* Author Homepage:  [Joakim Westerlund](http://joakim-westerlund.se)
 * Company: [Mynewsdesk](http://www.mynewsdesk.com)
 
 Please use the [GitHub issue tracker]{https://github.com/jorkas/jquery-analyticseventtracking-plugin/issues} for bug
