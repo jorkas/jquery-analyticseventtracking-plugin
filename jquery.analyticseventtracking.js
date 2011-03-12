@@ -33,7 +33,7 @@
             return $(this).data("report-label") ? $(this).data("report-label") : "";
         },
         reportValue: function(){
-            return $(this).data("report-value") ? $(this).data("report-value") : "";
+            return $(this).data("report-value") ? $(this).data("report-value") : 0;
         },
         trackEvent: function(){
             var settings = arguments[0];
@@ -44,7 +44,7 @@
                 eventLabel: methods.getEventValue(settings.label, this),
                 eventValue: methods.getEventValue(settings.value, this)
             };
-            _gaq.push([settings.trackingName], tracking.eventCategory, tracking.eventAction, tracking.eventLabel, tracking.eventValue);
+            _gaq.push([settings.trackerName, tracking.eventCategory, tracking.eventAction, tracking.eventLabel, tracking.eventValue]);
             if(settings.delayed === true && $(elm).attr("href")){
                 setTimeout(function(){
                     document.location = $(elm).attr("href");
@@ -59,7 +59,7 @@
             action: methods.reportAction,
             label: methods.reportLabel,
             value: methods.reportValue,
-            trackerName: "_trackEvent", //default to analytics default
+            trackerName: '_trackEvent', //default to analytics default
             delayed: true //Delay link clicks for some miliseconds
         };
         if (options){
