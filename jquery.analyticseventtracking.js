@@ -65,7 +65,7 @@
         if (options){
             settings = $.extend(settings, options);
         }
-        if(_gaq){
+        if(typeof(_gaq) !== "undefined"){
             methods.init.call( this, settings );
         }else{
             alert("Google Analaytics _gaq varible not found...");
