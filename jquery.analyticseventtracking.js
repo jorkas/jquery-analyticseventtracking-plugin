@@ -9,7 +9,7 @@
         init: function(settings){
             this.each(function(){
                 $(this).click(function(event){
-                    if(settings.delayed === true && $(this).attr("href") !== "undefined"){
+                    if(settings.delayed === true && $(this).attr("href")){
                         event.preventDefault();
                     }
                     return methods.trackEvent.call($(this),settings,event);
@@ -45,7 +45,7 @@
                 eventValue: methods.getEventValue(settings.value, this)
             };
             _gaq.push([settings.trackingName], tracking.eventCategory, tracking.eventAction, tracking.eventLabel, tracking.eventValue);
-            if(settings.delayed === true && $(this).attr("href") !== "undefined"){
+            if(settings.delayed === true && $(elm).attr("href")){
                 setTimeout(function(){
                     document.location = $(elm).attr("href");
                 },50);
