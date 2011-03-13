@@ -1,5 +1,6 @@
 /**
  * @author Joakim Westerlund
+ * @version Beto 1 (2011-03-12)
  */
 (function( $ ){
     var encodeString = function(str){
