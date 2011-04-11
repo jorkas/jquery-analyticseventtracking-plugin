@@ -1,7 +1,7 @@
 Google Analytics Event Tracking jQuery Plugin
 =========================
 
-A jQuery plugin that helps you set up easy [Event Tracking With Google Analytics] (http://code.google.com/apis/analytics/docs/tracking/eventTrackerGuide.html).
+A jQuery plugin that helps you set up easy [Event Tracking With Google Analytics](http://code.google.com/apis/analytics/docs/tracking/eventTrackerGuide.html).
 
 Features
 --------
