@@ -53,6 +53,18 @@ Can also be coded like this:
         action: "signup-click"
     });
 
+With external function to get the value for action
+
+    <a href="/signup">Sign up</a>
+    $("a").analyticsEventTracking({
+        category: "signup",
+        label: "signup-click",
+        action: getEventAction
+    });
+
+    function getEventAction(){
+        return $(this).attr("href");
+    }
 Links
 -----
 
