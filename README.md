@@ -13,8 +13,8 @@ Features
 Dependencies
 ------------
 
-The plugin requires jQuery v1.4.3 (or higher). (HTML5 data attributes required)
-The plugin requires Google Analytics script with `_gaq' variable set.
+* The plugin requires jQuery v1.4.3 (or higher). (HTML5 data attributes required)
+* The plugin requires Google Analytics script with `_gaq' variable set.
 
 Usage
 -----
@@ -58,6 +58,7 @@ Links
 
 * Author:  [Joakim Westerlund](http://github.com/jorkas) - [Homepage](http://joakim-westerlund.se)
 * Company: [Mynewsdesk](http://www.mynewsdesk.com)
+* Company: [Mynewsdesk Blog](http://devcorner.mynewsdesk.com)
 
 Please use the [GitHub issue tracker](https://github.com/jorkas/jquery-analyticseventtracking-plugin/issues) for bug
 reports and feature requests.
