@@ -70,7 +70,7 @@ Links
 
 * Author:  [Joakim Westerlund](http://github.com/jorkas) - [Homepage](http://joakim-westerlund.se)
 * Company: [Mynewsdesk](http://www.mynewsdesk.com)
-* Company: [Mynewsdesk Blog](http://devcorner.mynewsdesk.com)
+* Company Blog: [Mynewsdesk Blog](http://devcorner.mynewsdesk.com)
 
 Please use the [GitHub issue tracker](https://github.com/jorkas/jquery-analyticseventtracking-plugin/issues) for bug
 reports and feature requests.
