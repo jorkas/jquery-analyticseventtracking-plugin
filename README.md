@@ -8,7 +8,7 @@ Features
 
 * Reading event tracking variables from HTML data attributes as default
 * Support delay for links to be sure that the logging to Google Analytics will be stored.
-* Ready for self defined functions to change use own defined function for returning values that should be stored.
+* Ready for self defined functions to be able to handle the values that should be stored to Google Analytics by defining your own return values.
 
 Dependencies
 ------------
