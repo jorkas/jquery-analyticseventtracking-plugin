@@ -43,7 +43,7 @@ You may pass an options object to customize the event values:
 Examples
 -----
     <a href="/signup" data-jaet-report-category="signup" data-jaet-report-action="signup-click">Sign up</a>
-    $("a").analyticsEventTracking();`
+    $("a").analyticsEventTracking();
 
 Can also be coded like this:
 
