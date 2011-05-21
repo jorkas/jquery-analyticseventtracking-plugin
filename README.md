@@ -23,16 +23,16 @@ Usage
 You may pass an options object to customize the event values:
 
  - **category**
-   Default is HTML data attribute at the element with `data-report-category`.
+   Default is HTML data attribute at the element with `data-jaet-report-category`.
 
  - **action**
-   Default is HTML data attribute at the element with `data-report-action`.
+   Default is HTML data attribute at the element with `data-jaet-report-action`.
 
  - **label**
-   Default is HTML data attribute at the element with `data-report-label`.
+   Default is HTML data attribute at the element with `data-jaet-report-label`.
 
  - **value**
-   Default is HTML data attribute at the element with `data-report-value`.
+   Default is HTML data attribute at the element with `data-jaet-report-value`.
 
  - **trackerName**
    Default is `_trackEvent`.
@@ -42,7 +42,7 @@ You may pass an options object to customize the event values:
 
 Examples
 -----
-    <a href="/signup" data-report-category="signup" data-report-action="signup-click">Sign up</a>
+    <a href="/signup" data-jaet-report-category="signup" data-jaet-report-action="signup-click">Sign up</a>
     $("a").analyticsEventTracking();`
 
 Can also be coded like this:

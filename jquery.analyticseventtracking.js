@@ -1,6 +1,6 @@
 /**
  * @author Joakim Westerlund
- * @version Beta 1 (2011-03-12)
+ * @version 1.0 (2011-05-21)
  */
 (function( $ ){
     var encodeString = function(str){
@@ -25,16 +25,16 @@
             }
         },
         reportCategory: function(){
-            return $(this).data("report-category") ? $(this).data("report-category") : "DefaultCategory";
+            return $(this).data("jaet-report-category") ? $(this).data("jaet-report-category") : "DefaultCategory";
         },
         reportAction: function(){
-            return $(this).data("report-action") ? $(this).data("report-action") : "DefaultAction";
+            return $(this).data("jaet-report-action") ? $(this).data("jaet-report-action") : "DefaultAction";
         },
         reportLabel: function(){
-            return $(this).data("report-label") ? $(this).data("report-label") : "";
+            return $(this).data("jaet-report-label") ? $(this).data("jaet-report-label") : "";
         },
         reportValue: function(){
-            return $(this).data("report-value") ? $(this).data("report-value") : 0;
+            return $(this).data("jaet-report-value") ? $(this).data("jaet-report-value") : 0;
         },
         trackEvent: function(){
             var settings = arguments[0];
@@ -60,7 +60,7 @@
             action: methods.reportAction,
             label: methods.reportLabel,
             value: methods.reportValue,
-            trackerName: '_trackEvent', //default to analytics default
+            trackerName: '_trackEvent', //Default to Analytics default
             delayed: true //Delay link clicks for some miliseconds
         };
         if (options){
