@@ -3,6 +3,12 @@
  * @version 1.0 (2011-05-21)
  */
 (function( $ ){
+	var globalOptions = {
+		category: "jaet-report-category",
+		action: "jaet-report-action",
+		label: "jaet-report-label",
+		value: "jaet-report-value"
+	};
     var encodeString = function(str){
         return encodeURI(str);
     };
@@ -25,16 +31,16 @@
             }
         },
         reportCategory: function(){
-            return $(this).data("jaet-report-category") ? $(this).data("jaet-report-category") : "DefaultCategory";
+            return $(this).data(globalOptions.category) ? $(this).data(globalOptions.category) : "DefaultCategory";
         },
         reportAction: function(){
-            return $(this).data("jaet-report-action") ? $(this).data("jaet-report-action") : "DefaultAction";
+            return $(this).data(globalOptions.action) ? $(this).data(globalOptions.action) : "DefaultAction";
         },
         reportLabel: function(){
-            return $(this).data("jaet-report-label") ? $(this).data("jaet-report-label") : "";
+            return $(this).data(globalOptions.label) ? $(this).data(globalOptions.label) : "";
         },
         reportValue: function(){
-            return $(this).data("jaet-report-value") ? $(this).data("jaet-report-value") : 0;
+            return $(this).data(globalOptions.value) ? parseInt($(this).data(globalOptions.value), 10) : 0;
         },
         trackEvent: function(){
             var settings = arguments[0];
@@ -53,7 +59,11 @@
             }
         }
     };
-
+	
+	$.analyticsEventTracking = function(options) {
+		globalOptions = $.extend(globalOptions, options || {});
+	};
+	
     $.fn.analyticsEventTracking = function(options){
         var settings = {
             category: methods.reportCategory,
