@@ -62,14 +62,20 @@
             value: methods.reportValue,
             trackerName: '_trackEvent', //Default to Analytics default
             delayed: true //Delay link clicks for some miliseconds
-        };
+        }, errorMsg;
         if (options){
             settings = $.extend(settings, options);
         }
         if(typeof(_gaq) !== "undefined"){
             methods.init.call( this, settings );
-        }else{
-            alert("Google Analaytics _gaq varible not found...");
+        }else {
+			errorMsg = "Google Analaytics _gaq varible not found! Please set up Google Analytics properly.";
+			
+			if(console && console.error && typeof console.error === "function"){
+				console.error(errorMsg);
+			} else {
+				throw errorMsg;
+			}
         }
     };
 })( jQuery );
