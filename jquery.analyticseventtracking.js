@@ -19,9 +19,9 @@
         },
         getEventValue: function(value,elm){
             if($.isFunction(value)){
-                return value.call(elm);
+                return encodeString(value.call(elm));
             }else{
-                return value;
+                return encodeString(value);
             }
         },
         reportCategory: function(){
