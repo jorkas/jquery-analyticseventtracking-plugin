@@ -1,21 +1,25 @@
+/*jslint browser: true, undef: true, nomen: true, eqeqeq: true, bitwise: false,
+         newcap: true, immed: true, white: false, plusplus: false */
+/*global jQuery, console, _gaq */
+
 /**
  * @author Joakim Westerlund
  * @author Sven Strittmatter <weltraumschaf@gmail.com>
  * @version 1.0 (2011-05-21)
  * @link https://github.com/jorkas/jquery-analyticseventtracking-plugin
  */
-(function( $ ){
+(function($) {
 	var globalOptions = {
 		category: "jaet-report-category",
-		action: "jaet-report-action",
-		label: "jaet-report-label",
-		value: "jaet-report-value"
-	};
-    var methods = {
-        init: function(settings){
-            this.each(function(){
-                $(this).click(function(event){
-                    if(settings.delayed === true && $(this).attr("href")){
+		action:   "jaet-report-action",
+		label:    "jaet-report-label",
+		value:    "jaet-report-value"
+	},
+    methods = {
+        init: function(settings) {
+            this.each(function() {
+                $(this).click(function(event) {
+                    if (settings.delayed === true && $(this).attr("href")) {
                         event.preventDefault();
                     }
 
@@ -23,37 +27,53 @@
                 });
             });
         },
-        getEventValue: function(value,elm){
-            if($.isFunction(value)){
+		getData: function(name, elm, defaultData) {
+			var $elm = $(elm), data;
+
+			data = $elm.data(name) || $elm.attr("data-" + name);
+
+			return data || defaultData;
+		},
+        getEventValue: function(value, elm) {
+            if ($.isFunction(value)) {
                 return value.call(elm);
-            }else{
+            } else {
                 return value;
             }
         },
-        reportCategory: function(){
-            return $(this).data(globalOptions.category) ? $(this).data(globalOptions.category) : "DefaultCategory";
+        reportCategory: function() {
+            return methods.getData(globalOptions.category, this, "DefaultCategory");
         },
-        reportAction: function(){
-            return $(this).data(globalOptions.action) ? $(this).data(globalOptions.action) : "DefaultAction";
+        reportAction: function() {
+			return methods.getData(globalOptions.action, this, "DefaultAction");
         },
-        reportLabel: function(){
-            return $(this).data(globalOptions.label) ? $(this).data(globalOptions.label) : "";
+        reportLabel: function() {
+			return methods.getData(globalOptions.label, this, "DefaultLabel");
         },
-        reportValue: function(){
-            return $(this).data(globalOptions.value) ? parseInt($(this).data(globalOptions.value), 10) : 0;
+        reportValue: function() {
+			var value = methods.getData(globalOptions.value, this, 0);
+
+            return parseInt(value, 10) || 0;
         },
-        trackEvent: function(){
+        trackEvent: function() {
             var settings = arguments[0],
-				elm = $(this),
+				$this    = $(this),
 				tracking = {
 					eventCategory: methods.getEventValue(settings.category, this),
-					eventAction: methods.getEventValue(settings.action, this),
-					eventLabel: methods.getEventValue(settings.label, this),
-					eventValue: methods.getEventValue(settings.value, this)
-				}, errorMsg;
+					eventAction:   methods.getEventValue(settings.action, this),
+					eventLabel:    methods.getEventValue(settings.label, this),
+					eventValue:    methods.getEventValue(settings.value, this)
+				},
+				errorMsg;
 
 			if (typeof(_gaq) !== "undefined") {
-				_gaq.push([settings.trackerName, tracking.eventCategory, tracking.eventAction, tracking.eventLabel, tracking.eventValue]);
+				_gaq.push([
+					settings.trackerName,
+					tracking.eventCategory,
+					tracking.eventAction,
+					tracking.eventLabel,
+					tracking.eventValue
+				]);
 			} else {
 				errorMsg = "Google Analaytics _gaq varible not found! Please set up Google Analytics properly.";
 
@@ -64,10 +84,10 @@
 				}
 			}
 
-            if(settings.delayed === true && $(elm).attr("href")){
-                setTimeout(function(){
-                    document.location = $(elm).attr("href");
-                },50);
+            if (settings.delayed === true && $this.attr("href")) {
+                setTimeout(function() {
+                    document.location = $this.attr("href");
+                }, 50);
             }
         }
     };
@@ -82,12 +102,12 @@
 	 * @var {Object}
 	 */
 	$.analyticsEventTracking.defaultOptions = {
-		category: methods.reportCategory,
-		action: methods.reportAction,
-		label: methods.reportLabel,
-		value: methods.reportValue,
+		category:    methods.reportCategory,
+		action:      methods.reportAction,
+		label:       methods.reportLabel,
+		value:       methods.reportValue,
 		trackerName: '_trackEvent', //Default to Analytics default
-		delayed: true //Delay link clicks for some miliseconds
+		delayed:     true //Delay link clicks for some miliseconds
 	};
 
 	/**
@@ -96,7 +116,7 @@
 	 * @param {Object} Optional tracking options.
 	 * @return {jQuery}
 	 */
-    $.fn.analyticsEventTracking = function(options){
+    $.fn.analyticsEventTracking = function(options) {
         var settings = $.extend($.analyticsEventTracking.defaultOptions, options || {});
 
         methods.init.call(this, settings);
@@ -119,4 +139,4 @@
 		return this;
 	};
 
-})( jQuery );
+})(jQuery);
