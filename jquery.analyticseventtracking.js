@@ -81,7 +81,7 @@
             if (settings.delayed === true && $this.attr("href")) {
                 setTimeout(function() {
                     document.location = $this.attr("href");
-                    }, 50);
+                    }, 100);
                 }
             }
         };
