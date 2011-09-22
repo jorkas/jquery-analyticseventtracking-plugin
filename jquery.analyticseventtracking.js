@@ -49,7 +49,6 @@
         },
         reportValue: function() {
             var value = methods.getData(globalOptions.value, this, 0);
-
             return parseInt(value, 10) || 0;
         },
         trackEvent: function() {
