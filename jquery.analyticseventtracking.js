@@ -112,7 +112,7 @@
         * @return {jQuery}
         */
         $.fn.analyticsEventTracking = function(options) {
-            var settings = $.extend($.analyticsEventTracking.defaultOptions, options || {});
+            var settings = $.extend({},$.analyticsEventTracking.defaultOptions, options || {});
             methods.init.call(this, settings);
             return this;
         };
@@ -123,7 +123,7 @@
         * @return {jQuery}
         */
         $.fn.analyticsTrackEvent = function(options) {
-            var settings = $.extend($.analyticsEventTracking.defaultOptions, options || {});
+            var settings = $.extend({},$.analyticsEventTracking.defaultOptions, options || {});
             this.each(function(){
                 methods.trackEvent.call($(this), settings);
             });
