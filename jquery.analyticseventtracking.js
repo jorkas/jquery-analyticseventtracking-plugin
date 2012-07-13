@@ -17,13 +17,11 @@
     },
     methods = {
         init: function(settings) {
-            this.each(function() {
-                $(this).click(function(event) {
-                    if (settings.delayed === true && $(this).attr("href")) {
-                        event.preventDefault();
-                    }
-                    methods.trackEvent.call($(this), settings);
-                });
+            $(document).on('click', this.selector, function(event) {
+                if (settings.delayed === true && $(this).attr("href")) {
+                    event.preventDefault();
+                }
+                methods.trackEvent.call($(this), settings);
             });
         },
         getData: function(name, elm, defaultData) {
